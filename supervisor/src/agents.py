@@ -67,3 +67,8 @@ async def executar_supervisor(texto_usuario : str) -> str:
                 "messages": [HumanMessage(content=texto_usuario)]
             }  
         )
+    else:
+        resultado = "Não consegui entender sua solicitação"
+
+    mensagem_ia = resultado["messages"][-1]
+    return mensagem_ia.content
